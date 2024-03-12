@@ -5,11 +5,54 @@
              NavigationPage.HasNavigationBar="False">
 
     <StackLayout>
+        <StackLayout BackgroundColor="Black">
         <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center" Margin="10">
             <Button Text="Dodaj" Clicked="Dodaj_Clicked" HeightRequest="40" WidthRequest="100" BackgroundColor="Green" TextColor="White"/>
             <Button Text="Edytuj" Clicked="Edytuj_Clicked" HeightRequest="40" WidthRequest="100" BackgroundColor="Blue" TextColor="White"/>
             <Button Text="Usuń" Clicked="Usun_Clicked" HeightRequest="40" WidthRequest="100"  BackgroundColor="Red" TextColor="White"/>
         </StackLayout>
+            
+        </StackLayout>
+        <ListView x:Name="lista" SelectionMode="Single" HasUnevenRows="True">
+            <ListView.Header>
+                <StackLayout>
+                    <Grid BackgroundColor="Black">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Label Text="Nazwa" Grid.Column="0" Grid.Row="0" HorizontalOptions="CenterAndExpand" FontSize="18" TextColor="White"/>
+                        <Label Text="Cena" Grid.Column="1" Grid.Row="0" HorizontalOptions="CenterAndExpand" FontSize="18" TextColor="White"/>
+                        <Label Text="Ilość" Grid.Column="2" Grid.Row="0" HorizontalOptions="CenterAndExpand" FontSize="18" TextColor="White"/>
+                    </Grid>
+                </StackLayout>
+            </ListView.Header>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+                                <Label Text="{Binding Nazwa}" Grid.Column="0" Grid.Row="0" HorizontalOptions="CenterAndExpand" FontSize="15"/>
+                                <Label Text="{Binding Cena}" Grid.Column="1" Grid.Row="0" HorizontalOptions="CenterAndExpand" FontSize="15"/>
+                                <Label Text="{Binding Ilosc}" Grid.Column="2" Grid.Row="0" HorizontalOptions="CenterAndExpand" FontSize="15"/>
+                            </Grid>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
     </StackLayout>
 
 </ContentPage>
