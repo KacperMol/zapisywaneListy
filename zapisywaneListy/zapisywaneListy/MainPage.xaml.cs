@@ -13,6 +13,7 @@ namespace zapisywaneListy
         public MainPage()
         {
             InitializeComponent();
+            lista.ItemsSource = Zapisywanie.ReadData();
         }
 
         private void Dodaj_Clicked(object sender, EventArgs e)

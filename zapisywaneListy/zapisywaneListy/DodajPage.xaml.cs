@@ -12,7 +12,7 @@ namespace zapisywaneListy
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class DodajPage : ContentPage
     {
-        Produkt Produkt;
+        Produkt Produkt = new Produkt();
         public DodajPage()
         {
             InitializeComponent();
@@ -38,7 +38,10 @@ namespace zapisywaneListy
 
         private void dodaj_Clicked(object sender, EventArgs e)
         {
-
+            Produkt.Nazwa = txtNazwa.Text; 
+            Produkt.Cena = int.Parse(txtCena.Text);
+            Produkt.Ilosc = int.Parse(txtIlosc.Text);
+            Zapisywanie.WriteToFile(Produkt);   
         }
         private void edytuj_Clicked(object sender, EventArgs e)
         {

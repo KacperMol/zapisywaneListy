@@ -9,6 +9,7 @@ namespace zapisywaneListy
     public class Zapisywanie
     {
         public static string fileName = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "zapisywanie.txt");
+        public static List<Produkt> list = new List<Produkt>();
         public static List<Produkt> ReadData()
         {
             if(File.Exists(fileName))
@@ -18,15 +19,15 @@ namespace zapisywaneListy
 
                 foreach (string line in lines)
                 {
-                    string[] parts = line.Split(' ');
-                    if(parts.Length == 3) { 
+                    string[] parts = line.Split(';');
+                    
                         Produkt produkt = new Produkt();
                         produkt.Nazwa = parts[0];
                         produkt.Cena = int.Parse(parts[1]);
                         produkt.Ilosc = int.Parse(parts[2]);
 
                         result.Add(produkt);    
-                    }
+                    
                 }
                 return result;
             }
@@ -36,10 +37,11 @@ namespace zapisywaneListy
             }
         }
 
-        public static void WriteToFile(List<Produkt> produkts)
+        public static void WriteToFile(Produkt produkt)
         {
-            List<string> outputFile = new List<string>();   
-            foreach(var bmiResult in produkts) 
+            List<string> outputFile = new List<string>();
+            list.Add(produkt);
+            foreach(var bmiResult in list) 
             {
                 string linia = $"{bmiResult.Nazwa};{bmiResult.Cena};{bmiResult.Ilosc}";
                 outputFile.Add(linia);
