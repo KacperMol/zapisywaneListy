@@ -13,6 +13,11 @@ namespace zapisywaneListy
         public MainPage()
         {
             InitializeComponent();
+            OnAppearing();
+        }
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
             lista.ItemsSource = Zapisywanie.ReadData();
         }
 
