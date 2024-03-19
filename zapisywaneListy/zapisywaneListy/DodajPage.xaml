@@ -21,11 +21,11 @@
                 <Label Text="Cena: " Grid.Column="0" Grid.Row="2" FontSize="20" HorizontalOptions="Center" VerticalOptions="Center"/>
                 <Label Text="Ilość: " Grid.Column="0" Grid.Row="3" FontSize="20" HorizontalOptions="Center" VerticalOptions="Center"/>
 
-                <Entry Grid.Column="1" Grid.Row="1" FontSize="20" HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="170"/>
-                <Entry Grid.Column="1" Grid.Row="2" FontSize="20" HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="170"/>
-                <Entry Grid.Column="1" Grid.Row="3" FontSize="20" HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="170"/>
+                <Entry x:Name="txtNazwa" Grid.Column="1" Grid.Row="1" FontSize="20" HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="170"/>
+                <Entry x:Name="txtCena" Grid.Column="1" Grid.Row="2" FontSize="20" HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="170"/>
+                <Entry x:Name="txtIlosc" Grid.Column="1" Grid.Row="3" FontSize="20" HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="170"/>
 
-                <Button x:Name="przycisk" Text="Dodaj" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="4" FontSize="30" HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="200"/>
+                <Button x:Name="przycisk" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="4" FontSize="30" HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="200"/>
             </Grid>
         </StackLayout>
     </ContentPage.Content>
