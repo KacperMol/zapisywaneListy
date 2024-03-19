@@ -11,6 +11,7 @@ namespace zapisywaneListy
 {
     public partial class MainPage : ContentPage
     {
+        List<Produkt> produktList = new List<Produkt>();
         public MainPage()
         {
             InitializeComponent();
@@ -19,7 +20,8 @@ namespace zapisywaneListy
         protected override void OnAppearing()
         {
             base.OnAppearing();
-            lista.ItemsSource = Zapisywanie.ReadData();
+            produktList = Zapisywanie.ReadData();
+            lista.ItemsSource = produktList;
         }
 
         private void Dodaj_Clicked(object sender, EventArgs e)
