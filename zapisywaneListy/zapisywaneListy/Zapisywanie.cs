@@ -48,5 +48,11 @@ namespace zapisywaneListy
             }
             File.WriteAllLines(fileName, outputFile);
         }
+
+        public static void DeleteData(List<Produkt> produktList, Produkt produkt)
+        {
+            produktList.Remove(produkt);
+            WriteToFile(produkt);
+        }
     }
 }

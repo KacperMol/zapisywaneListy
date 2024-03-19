@@ -41,7 +41,8 @@ namespace zapisywaneListy
             Produkt.Nazwa = txtNazwa.Text; 
             Produkt.Cena = int.Parse(txtCena.Text);
             Produkt.Ilosc = int.Parse(txtIlosc.Text);
-            Zapisywanie.WriteToFile(Produkt);   
+            Zapisywanie.WriteToFile(Produkt);
+            Navigation.PopAsync();
         }
         private void edytuj_Clicked(object sender, EventArgs e)
         {

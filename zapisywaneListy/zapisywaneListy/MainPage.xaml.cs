@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -33,7 +34,11 @@ namespace zapisywaneListy
 
         private void Usun_Clicked(object sender, EventArgs e)
         {
-
+            Produkt zaznaczony = lista.SelectedItem as Produkt;
+            if (zaznaczony != null)
+            {
+                Zapisywanie.DeleteData(Zapisywanie.ReadData(), zaznaczony);
+            }
         }
     }
 }
