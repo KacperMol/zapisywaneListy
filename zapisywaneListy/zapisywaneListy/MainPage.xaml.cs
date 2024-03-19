@@ -17,12 +17,12 @@ namespace zapisywaneListy
 
         private void Dodaj_Clicked(object sender, EventArgs e)
         {
-
+            Navigation.PushAsync(new DodajPage());
         }
 
         private void Edytuj_Clicked(object sender, EventArgs e)
         {
-
+            Navigation.PushAsync(new DodajPage());
         }
 
         private void Usun_Clicked(object sender, EventArgs e)
